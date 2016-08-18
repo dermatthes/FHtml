@@ -1,7 +1,7 @@
 [<img src="https://travis-ci.org/dermatthes/FHtml.svg">](https://travis-ci.org/dermatthes/FHtml)
 
 
-# FHtml
+# FHtml - Fluent HTML5 Generator
 
 Fluent HTML Generator for PHP7
 
