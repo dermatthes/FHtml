@@ -1,3 +1,6 @@
+[<img src="https://travis-ci.org/dermatthes/FHtml.svg">](https://travis-ci.org/dermatthes/FHtml)
+
+
 # FHtml
 
 Fluent HTML Generator for PHP7
@@ -32,6 +35,8 @@ Will generate proper encoded Html-Code.
  
  
 ## Install
+
+FHtml is available at packagist.com:
 
 ```
 composer require html5\fhtml
