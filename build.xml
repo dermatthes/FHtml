@@ -1,0 +1,17 @@
+<?xml version="1.0"  encoding="UTF-8" ?>
+<!--
+    $Id$
+-->
+
+<project  name="gismo/route" basedir="." default="composer update">
+    <tstamp>
+        <!-- Format is, e.g. Sat, 03 Oct 2009, 16:31 -->
+        <format property="buildtime" pattern=" %d.%m.%Y %H:%M"/>
+    </tstamp>
+
+
+    <target name="composer update">
+        <!-- Phing hat ein eigenes PHPUNit-Klasse: Aber: Process-isolation klappt nicht. D.h. der Build von Libraries schlägt fehl -->
+        <exec dir="." logoutput="true" checkreturn="true" command="composer update"/>
+    </target>
+</project>
