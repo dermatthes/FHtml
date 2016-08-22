@@ -14,7 +14,7 @@ need any quotes (`'` or `"`) within your quoted strings.
 
 Example? See the Kickstart:
 
-## Kickstart
+## Kickstart - See FHtml in action:
 
 ```php
 echo fhtml("input @type=text @name=firstName @value=?", $_POST["firstName"]);
@@ -22,7 +22,8 @@ echo fhtml("input @type=text @name=firstName @value=?", $_POST["firstName"]);
 
 yes - no double quotes needed to generate valid and proper escaped xhtml: 
 
-```html
+```
+<!-- Output: -->
 <input type="text" name="firstName" value="Some Value"/>
 ```
 
@@ -37,7 +38,8 @@ echo fhtml("div @class=style1 @style=display:block;width:100%")
 
 yeah: Your PHP-code is shorter! And proper indention is done as well:
 
-```html
+```
+<!-- Output: -->
 <div class="style1" style="display:block;width:100%">
     <h1>Hi There!</h1>
     <p>
