@@ -8,7 +8,7 @@
 Generating correct and secure HTML Code within your PHP-Code causes headache. 
 Using FHtml's fluent speaking Api will save you lots of money you'd otherwise spent on aspirin.
 
-It comes with an `@`-attribute-parser for easy and pain-less writing; you don't
+It comes with an `@`-attribute-parser for easy and painless writing; you don't
 need any quotes (`'` or `"`) within your quoted strings.
 
 Example? See the Kickstart:
@@ -35,7 +35,7 @@ echo fhtml("div @class=style1 @style=display:block;width:100%")
             ->input("@type=text @value=?", $someUnescapedValue);
 ```
 
-yeah: Your PHP-code is shorter! And proper indention is done as well:
+yeah: Your PHP-code is shorter than the raw html! And proper indention is done as well:
 
 ```
 <!-- Output: -->
