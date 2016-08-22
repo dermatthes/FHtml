@@ -5,9 +5,8 @@
 
 **Fluent HTML Generator for PHP7** - Version **0.2** - **2016-08-23** - Written by Matthias Leuffen
 
-Generating correct and secure HTML Code within your Code-Blocks is
-always a headache. FHtml helps with a fluent speaking Api for
-generating clean XHTML-compliant code.
+Generating correct and secure HTML Code within your PHP-Code causes headache. 
+Using FHtml's fluent speaking Api will save you lots of money you'd otherwise spent on aspirin.
 
 It comes with an `@`-attribute-parser for easy and pain-less writing; you don't
 need any quotes (`'` or `"`) within your quoted strings.
@@ -55,8 +54,8 @@ Have you ever written a `<select>`-box with preselected value? This is the FHtml
 echo fhtml("select @name=select1")->options($optionsArr, $_POST["select1"]);
 ```
  
-**Using an IDE like PhpStorm?** FHtml will come with full code-completion on
-all layers. Stop typing - just hit `CTRL-SPACE` -> `ENTER`.
+**Using an IDE (PhpStorm)?** FHtml comes with full code-completion on
+all layers. Stop typing - just hit `CTRL-SPACE` and `ENTER`.
  
 ## Features
 
@@ -138,7 +137,7 @@ You can use the `end()` Method to jump back to the parent element.
 ### Jump Marks
 
 You can use the `as(<jumpMark>)` Method to define a element you
-can jump to anytype by using `goto(<jumpMark>)`:
+can jump to from anywhere by using `goto(<jumpMark>)`:
 
 ```php
 
@@ -150,7 +149,7 @@ can jump to anytype by using `goto(<jumpMark>)`:
     ->p();
 ```
     
-Will will append the `<p>` element to the `<body>` element.
+The example will append the `<p>` element to the `<body>` element.
 
 
 ### Generating `<select>` Options from arrays
