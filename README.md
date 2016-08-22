@@ -108,7 +108,7 @@ $t->input("@type=text @value=$userInput"); // <- Don't do that!
 ```
 
 use the auto-escaping array construct with `?` as placeholder and add the raw
-values as additional parameters:
+values as additional parameter(s):
 
 ```php
 $t->input("@value=?", $userInput); // <-- Right way: Will escape the value
@@ -141,8 +141,7 @@ can jump to from anywhere by using `goto(<jumpMark>)`:
 
 ```php
 
-(new FHtml())
-->body()->as("body-elem")
+fhtml()->body()->as("body-elem")
     ->div()
         ->div()
 ->goto("body-elem")
@@ -161,7 +160,7 @@ Imagine you have some mapping of key-values array for your select-field:
 ```php
 $options = [
     "foo" => "Foo Apples",
-    "bar" => "Bar Bananas"
+    "bar" => "Bar Bananas",
     "baz" => "Batzen for Cats"
 ];
 ```
