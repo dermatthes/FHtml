@@ -51,29 +51,23 @@ all layers. Stop typing - just hit `CTRL-SPACE` -> `ENTER`.
  
 ## Features
 
-* Will generate proper escaped XHTML-compliant HTML5 code
-* Quick writing
+* Generates proper escaped XHTML-compliant HTML5 code
+* Quick writing without quoted quotes
 * Full IDE support (tested on Jetbrains PhpStorm)
 * Makes use of PHP7 return / parameter declaration
 * Autodetecing multiple APIs compatible to I18n Plugins 
 * Unit-Tested and CI by TravisCI
 
-## Related Projects
 
-If you like FHtml you might be interested in some of my other projects:
-
-* **html5/template**: An angular-js / phptal implementation of inline-template components
-* **html5/htmlreader**: A fast and stupid HTML5 tokenizer not using libxml. (Stupid === Good; if you've ever tried to parse HTML without having libxml manipulating your elements)  
- 
 ## Install
 
-FHtml is available at packagist.com:
+FHtml is available as composer-package at **packagist.com**:
 
 ```
 composer require html5\fhtml
 ```
 
-or add it to section to your `composer.json`:
+or just add it to your `composer.json`:
 
 ```
     require: {
@@ -81,15 +75,17 @@ or add it to section to your `composer.json`:
     }
 ```
 
+_Hint: Use `composer upgrade --prefer-dist` to omit unit-tests and development files_
+
 ## Error Reports
 
-Please report errors, wishes and feedback as issue to my github page:
+Please report errors, wishes and feedback:
  
 * Github-Page: https://github.com/dermatthes/FHtml
 * Report Issues: https://github.com/dermatthes/FHtml/issues
 
-## Usage
 
+## Usage
 
 ### @-attributes
 
@@ -197,6 +193,14 @@ I prefer using the shortest:
 ```php
 echo fthml()->input("@type=text @name=name1 @value=?", $_POST["name1"]);
 ```
+
+## Related Projects
+
+If you like FHtml you might be interested in some of my other projects:
+
+* **html5/template**: An angular-js / phptal implementation of inline-template components
+* **html5/htmlreader**: A fast and stupid HTML5 tokenizer not using libxml. (Stupid === Good; if you've ever tried to parse HTML without having libxml manipulating your elements)  
+ 
 
 ## Author
 
