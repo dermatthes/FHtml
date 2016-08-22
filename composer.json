@@ -18,6 +18,9 @@
     },
     "autoload": {
         "psr-4": { "Html5\\FHtml\\": "src/FHtml" },
+        "files": [
+            "src/fhtml.inc.php"
+        ],
         "exclude-from-classmap": [
             "/test/"
         ]

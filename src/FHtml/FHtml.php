@@ -16,6 +16,19 @@
     use Html5\Template\Node\GoElementNode;
     use Html5\Template\Node\GoTextNode;
 
+    /**
+     * Class FHtml
+     * @package Html5\FHtml
+     *
+     * @method $this div($attrs, ...$params)
+     * @method $this input($attrs, ...$params)
+     * @method $this p($attrs, ...$params)
+     * @method $this b($attrs, ...$params)
+     * @method $this h1($attrs, ...$params)
+     * @method h2 $this
+     * @method h3 $this
+     *
+     */
     class FHtml {
 
         /**
@@ -42,6 +55,28 @@
             $this->curNode = $this->documentNode;
         }
 
+
+
+
+
+        public function __call($name, $arguments) : self
+        {
+            if (count ($arguments) === 0) {
+                // Variant: ->div()
+                return $this->elem("{$name}");
+            } else if (is_array($arguments[0])) {
+                // Variant: ->div(["@class=?", $className])
+                $args = $arguments[0];
+                $attrs = array_shift($args);
+                return $this->elem("{$name} {$attrs}", ...$args);
+            } else {
+                // Variant: ->div("@class=?", $classname)
+                $attrs = array_shift($arguments);
+                return $this->elem("{$name} {$attrs}", ...$arguments);
+            }
+        }
+
+
         /**
          * Define the sub-Element of the current node
          *
@@ -52,23 +87,27 @@
          * @param $def
          * @return FHtml
          */
-        public function elem($def) : self {
-            if (is_string($def)) {
-                $paramStr = $def;
-            } else if (is_array($def)) {
-                $paramStr = array_shift($def);
-                $arrayArgs = $def;
+        public function elem($elemDef, ...$params) : self {
+            if (is_string($elemDef)) {
+                $arrayArgs = $params;
+            } else if (is_array($elemDef)) {
+                $elemDefArr = $elemDef;
+                $elemDef = array_shift($elemDefArr);
+                $arrayArgs = $elemDefArr;
             } else {
-                throw new \InvalidArgumentException("Invalid string or array in input: elem(" . gettype($def). ")");
+                throw new \InvalidArgumentException("Invalid string or array in input: elem(" . gettype($elemDef). ")");
             }
 
 
-            $arr = explode("@", $paramStr);
-            $tagName = trim (array_shift($arr));
+            $arr = explode("@", $elemDef);
+            $tagName = trim(strtolower(array_shift($arr)));
+
 
             $attrs = [];
             $qmIndex = 0;
             foreach ($arr as $attdef) {
+                if ($attdef === "")
+                    continue;
                 list ($key, $val) = explode("=", $attdef, 2);
                 if ( ! isset ($val)) {
                     $attrs[trim ($key)] = null;
@@ -116,6 +155,28 @@
         }
 
 
+        /**
+         * Generate <select> options on the Fly
+         *
+         * <example>
+         * fhtml("select @name=country1")->options(["at"=>"Austria", "de" => "Germany", "us" => "USA"], $_POST["country1"]);
+         * </example>
+         *
+         * @param array $options
+         * @param string|null $selected
+         * @return FHtml
+         */
+        public function options(array $options, string $selected=null) : self {
+            foreach ($options as $key => $value) {
+                if ($selected == $key)
+                    $this->elem("option @value=? @selected=selected", $key)->text($value)->end();
+                else
+                    $this->elem("option @value=?", $key);
+            }
+            return $this;
+        }
+
+
         public function end() : self {
             if ( ! isset ($this->curNode->parent))
                 throw new \InvalidArgumentException("end(): Node has no parent.");
@@ -152,6 +213,9 @@
             return $this->documentNode->run($data, $this->template->getExecBag());
         }
 
-
+        public function __toString()
+        {
+            return $this->render();
+        }
 
     }
