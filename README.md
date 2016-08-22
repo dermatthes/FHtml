@@ -60,10 +60,10 @@ all layers. Stop typing - just hit `CTRL-SPACE` -> `ENTER`.
 
 ## Related Projects
 
-If you like FHtml you might be interested in my other Projects:
+If you like FHtml you might be interested in some of my other projects:
 
 * **html5/template**: An angular-js / phptal implementation of inline-template components
-* **html5/htmlreader**: A fast and stupid HTML5 tokenizer not using libxml. (Stupid === Good; if you've ever tried to parse Html without libxml manipulating your elements.)  
+* **html5/htmlreader**: A fast and stupid HTML5 tokenizer not using libxml. (Stupid === Good; if you've ever tried to parse HTML without having libxml manipulating your elements)  
  
 ## Install
 
@@ -73,29 +73,38 @@ FHtml is available at packagist.com:
 composer require html5\fhtml
 ```
 
+or add it to section to your `composer.json`:
+
+```
+    require: {
+        "html5/fhtml": "0.2"
+    }
+```
+
 ## Error Reports
 
-Please report errors, wishes and feedback to my github page:
+Please report errors, wishes and feedback as issue to my github page:
  
- https://github.com/dermatthes/FHtml
-
+* Github-Page: https://github.com/dermatthes/FHtml
+* Report Issues: https://github.com/dermatthes/FHtml/issues
 
 ## Usage
 
 
-### Quick writing for Attributes
+### @-attributes
 
 FHtml parses a single string input on `elem()` Method (or any direct tag-method like `div()` or `span()`) and parses it.
 
 To inject insecure or not properly escaped values from outside, use
-the Array construct:
+the `?`-Placeholder construct:
 
 **DON'T DO THAT:**
 ```php
 $t->input("@type=text @value=$userInput"); // <- Don't do that!
 ```
 
-use the auto-Escaping array construct with `?` as placeholder:
+use the auto-escaping array construct with `?` as placeholder and add the raw
+values as additional parameters:
 
 ```php
 $t->input("@value=?", $userInput); // <-- Right way: Will escape the value
@@ -188,6 +197,11 @@ I prefer using the shortest:
 ```php
 echo fthml()->input("@type=text @name=name1 @value=?", $_POST["name1"]);
 ```
+
 ## Author
 
-Written 2016 by Matthias Leuffen http://leuffen.de
+Written 2016 by Matthias Leuffen [leuffen.de](http://leuffen.de)
+
+## Licencse
+
+MIT-License
