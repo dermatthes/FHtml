@@ -56,6 +56,7 @@ all layers. Stop typing - just hit `CTRL-SPACE` -> `ENTER`.
 * Full IDE support (tested on Jetbrains PhpStorm)
 * Makes use of PHP7 return / parameter declaration
 * Autodetecing multiple APIs compatible to I18n Plugins 
+* Unit-Tested and CI by TravisCI
 
 ## Related Projects
 
