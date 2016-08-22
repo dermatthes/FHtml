@@ -1,9 +1,9 @@
 [<img src="https://travis-ci.org/dermatthes/FHtml.svg">](https://travis-ci.org/dermatthes/FHtml)
 
 
-# FHtml - `fhtml("small @class=header")->text("Fluent API for generating HTML")`
+# FHtml - Fluent HTML 
 
-Fluent HTML Generator for PHP7 - Version 0.2 - 2016-08-23
+**Fluent HTML Generator for PHP7** - Version **0.2** - **2016-08-23**
 
 Generating correct and secure HTML Code within your Code-Blocks is
 always a headache. FHtml helps with a fluent speaking Api for
