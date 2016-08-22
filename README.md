@@ -1,7 +1,7 @@
 [<img src="https://travis-ci.org/dermatthes/FHtml.svg">](https://travis-ci.org/dermatthes/FHtml)
 
 
-# FHtml - Fluent HTML5 Generator
+# FHtml - `fhtml("small @class=header")->text("Fluent API for generating HTML")`
 
 Fluent HTML Generator for PHP7 - Version 0.2 - 2016-08-23
 
