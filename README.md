@@ -214,6 +214,6 @@ If you like FHtml you might be interested in some of my other projects:
 
 Written 2016 by Matthias Leuffen [leuffen.de](http://leuffen.de)
 
-## Licencse
+## License
 
 MIT-License
