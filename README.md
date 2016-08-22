@@ -46,7 +46,7 @@ yeah: Your PHP-code is shorter! And proper indention is done as well:
 </div>
 ```
  
-**Using and IDE like PhpStorm?** FHtml will come with full code-completion on
+**Using an IDE like PhpStorm?** FHtml will come with full code-completion on
 all layers. Stop typing - just hit `CTRL-SPACE` -> `ENTER`.
  
 ## Features
