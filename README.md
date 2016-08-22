@@ -3,7 +3,7 @@
 
 # FHtml - Fluent HTML 
 
-**Fluent HTML Generator for PHP7** - Version **0.2** - **2016-08-23**
+**Fluent HTML Generator for PHP7** - Version **0.2** - **2016-08-23** - Written by Matthias Leuffen
 
 Generating correct and secure HTML Code within your Code-Blocks is
 always a headache. FHtml helps with a fluent speaking Api for
