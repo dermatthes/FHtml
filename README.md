@@ -35,7 +35,7 @@ echo fhtml("div @class=style1 @style=display:block;width:100%")
             ->input("@type=text @value=?", $someUnescapedValue);
 ```
 
-yeah: You type fewer code. And proper indention is done as well:
+yeah: Your PHP-code is shorter! And proper indention is done as well:
 
 ```html
 <div class="style1" style="display:block;width:100%">
@@ -45,6 +45,9 @@ yeah: You type fewer code. And proper indention is done as well:
     </p>
 </div>
 ```
+ 
+**Using and IDE like PhpStorm?** FHtml will come with full code-completion on
+all layers. Stop typing - just hit `CTRL-SPACE` -> `ENTER`.
  
 ## Features
 
