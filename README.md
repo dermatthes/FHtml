@@ -46,6 +46,13 @@ yeah: Your PHP-code is shorter! And proper indention is done as well:
 </div>
 ```
  
+ 
+Have you ever written a `<select>`-box with preselected value? This is the FHtml-way:
+
+```php
+echo fhtml("select @name=select1")->options($optionsArr, $_POST["select1"]);
+```
+ 
 **Using an IDE like PhpStorm?** FHtml will come with full code-completion on
 all layers. Stop typing - just hit `CTRL-SPACE` -> `ENTER`.
  
